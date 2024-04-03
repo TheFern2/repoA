@@ -1,0 +1,14 @@
+name: Triggered Workflow
+
+on:
+  repository_dispatch:
+    types: [trigger-event]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Event Payload
+        run: |
+        echo "Event payload: ${{ toJson(github.event.client_payload) }}"
