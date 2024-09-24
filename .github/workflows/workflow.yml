@@ -30,4 +30,4 @@ jobs:
         env:
           MY_TOKEN: ${{ secrets.MY_SECRET }}
         run: |
-          python script.py ${{ github.event.client_payload.version_tag }}
+          python .github/workflows/scripts/main.py ${{ github.event.client_payload.version_tag }}
